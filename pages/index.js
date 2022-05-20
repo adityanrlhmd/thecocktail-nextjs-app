@@ -31,7 +31,7 @@ export default function Home() {
           Welcome to <Link href="/drink">The Cocktail</Link>
         </h1>
         <Link href="/drink">
-          <button className="bg-white py-3 px-5 mt-5 rounded font-semiblod hover:outline-dashed hover:outline-white hover:text-white hover:bg-transparent transition ease-in-out duration-200">
+          <button className="bg-white py-3 px-5 mt-5 rounded-lg font-semiblod hover:outline-dashed hover:outline-white hover:text-white hover:bg-transparent transition ease-in-out duration-200">
           See Drink List
           </button>
         </Link>

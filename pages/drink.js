@@ -4,6 +4,7 @@ import { useRouter } from 'next/router'
 import styles from '../styles/Home.module.css'
 import DrinkList from '../components/Post'
 import NavDial from '../components/NavDial'
+import Head from 'next/head'
 
 
 export default function Drink() {
@@ -51,6 +52,10 @@ export default function Drink() {
 
     return(
         <div className='p-5'>
+            <Head>
+                <title>Drink List</title>
+                <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+            </Head>
             <h1 className='text-center text-4xl antialiased mt-2 mb-4 font-mono'>This is List of The Cocktails !</h1>
                 <div className='grid grid-cols-4'>
                     <form className='mb-2 w-full col-span-4 md:col-start-2 md:col-span-2'>
