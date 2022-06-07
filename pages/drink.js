@@ -10,7 +10,7 @@ import Head from 'next/head'
 export default function Drink() {
     const [state, setState] = useState({
         posts: [],
-        searchDrink: ''
+        searchDrink: []
     })
 
     useEffect(() => {
@@ -19,7 +19,7 @@ export default function Drink() {
                 .then(result => {
                     setState({ posts: result.drinks })
         })
-    })
+    }, [])
 
     const handleChange = (e) => {
         const search = e.target.value;
@@ -30,7 +30,7 @@ export default function Drink() {
             fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${search}`)
                 .then(response => response.json())
                 .then(result => {
-                    setState({ posts: result.drinks })
+                    setState({ posts: result.drinks, searchDrink: search})
                 })
         } else {
             fetch('https://www.thecocktaildb.com/api/json/v1/1/search.php?f=a')
@@ -41,14 +41,14 @@ export default function Drink() {
         }
     }
 
-    if(!state.posts) {
-        return (
-            <div className='no-data text-center'>
-                <h2>No Data Found</h2>
-                <Link href='/'>Go Back To Home</Link>
-            </div>
-        )
-    }
+    // if(!state.posts) {
+    //     return (
+    //         <div className='no-data text-center'>
+    //             <h2>No Data Found</h2>
+    //             <Link href='/'>Go Back To Home</Link>
+    //         </div>
+    //     )
+    // }
 
     return(
         <div className='p-5'>
